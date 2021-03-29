@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+enum Window: String{
+    case open 
+    case close
+}
+    enum Engine: String{
+    case off 
+    case on 
+}
+
+//  структуры
+struct Cars {
+    let type: String 
+    let car: String 
+    let Model: String 
+    let yearOfManufacture: Int 
+    let trunkVolume: Int 
+    var fullBoot: Int
+    var engineStarted: Engine
+    var openWindow: Window
+    mutating func window (_ window:Window){
+        if openWindow == .open {
+            print ("Состояние окон: Окна открыты")
+        }else if openWindow == .close{
+            print ("Состояние окон: Окна закрыты")
+        }
+    }
+    mutating func addLeters (_ booleters: Int) {
+        if  booleters &gt; 0 {    
+            self.fullBoot = booleters
+        print ("Заполненность багажника: \(booleters) литров")
+    }else if booleters == 0{
+        self.fullBoot = booleters
+        print ("Багажник: Пустой")
+        }
+        }
+    mutating func engine (_ engine:Engine){
+        if engineStarted == .off{
+            print ("Состояние мотора: Motor off")
+        }else if engineStarted == .on {
+            print ("Состояние мотора: Motor on")       
+        }
+    }
+    mutating func description (){
+        print ("Тип: \(self.type)")
+        print ("Марка: \(self.car)")
+        print ("Модель: \(self.Model)")
+        print ("Год выпуска: \(self.yearOfManufacture)")
+        print ("Объем багажника: \(self.trunkVolume)")
+        addLeters(self.fullBoot)
+        engine(self.engineStarted)
+        window(self.openWindow)      
+    }
+}
+
+var nissan = Cars(type: "SportCar", car: "Nissan", Model: "GT-R", yearOfManufacture: 2020, trunkVolume: 315, fullBoot: 100, engineStarted: .on, openWindow: .close)
+nissan.description()
+
+var gas = Cars(type: "Trunk", car: "Gas", Model: "3302", yearOfManufacture: 2017, trunkVolume: 3500, fullBoot: 500, engineStarted: .off, openWindow: .close) 
+gas.description()
+gas.addLeters(0)
+gas.window(.open)
+nissan.addLeters(0)
+gas.description()
+//      вторую структуру не сделала, потому что была такой же
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 2003}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
